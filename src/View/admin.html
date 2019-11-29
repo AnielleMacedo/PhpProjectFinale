@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<h1 style="text-align: center">Area riservata - Gestione dei contenuti</h1>
+<!--o gerenciDOR DO CONTEUDO DO SITE GERLMENTE è PROTEGIDO POR 1 LOGIN E SENHA QUE SERA FEITO AVANTI-->
+
+
+<a href="http://localhost/Quotidiano_MVC/?pagina=admin&metodo=create">*Inserire Articolo</a><br><br><br>
+<p>Elenco degli articoli:</p>
+<table border="2" >
+	<tr>
+		<th>DATA</th>
+		<th>TITOLO</th>
+		<th>MODIFICA</th>
+		<th>DELETE</th>
+	</tr>
+
+	{% for article in articoli %}
+	<tr>
+		<td>{{article.data}}</td>
+		<td>{{article.titolo}}</td>
+		<td><a href="http://localhost/Quotidiano_MVC/?pagina=admin&metodo=change&id={{article.id}}">Modifica</a></td>
+		<td><a href="http://localhost/Quotidiano_MVC/?pagina=admin&metodo=delete&id={{article.id}}" style="color:#B40404">Delete</a></td>
+
+
+	</tr>
+	{% endfor %}
+</table>
